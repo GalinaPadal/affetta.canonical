@@ -37,7 +37,7 @@ class AffettaCanonicalHL
         $url = $APPLICATION->GetCurDir();
         $canonical = AffettaCanonicalHL::SEOUrl($url);
         if($canonical["ID"]){
-            $APPLICATION->AddHeadString('<link rel="canonical" href="'.$canonical["UF_CANONICAL"].'" />',true);
+            $APPLICATION->AddHeadString('<link rel="canonical" href="'.$_SERVER["REDIRECT_REQUEST_SCHEME"].'://'.$_SERVER["SERVER_NAME"].$canonical["UF_CANONICAL"].'" />',true);
         }
 
     }
